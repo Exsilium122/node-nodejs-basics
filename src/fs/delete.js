@@ -1,5 +1,12 @@
+import fs from 'fs/promises';
+import { exists } from './utils.js';
+
+
+const filePath = 'fs/files/fileToRemove.txt';
+
 const remove = async () => {
-  // Write your code here
+  await exists(filePath);
+  await fs.unlink(filePath);
 };
 
 await remove();
